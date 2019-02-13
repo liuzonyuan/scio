@@ -161,7 +161,7 @@ final case class CoderException private[coders] (stacktrace: Array[StackTraceEle
 
 // XXX: Workaround a NPE deep down the stack in Beam
 // info]   java.lang.NullPointerException: null value in entry: T=null
-private case class WrappedBCoder[T](u: BCoder[T]) extends BCoder[T] {
+private[scio] case class WrappedBCoder[T](u: BCoder[T]) extends BCoder[T] {
 
   /**
    * Eagerly compute a stack trace on materialization
